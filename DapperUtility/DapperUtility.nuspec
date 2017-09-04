@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ghulamustafa.Helpers.DapperUtility</id>
+    <version>1.0.0</version>
+    <title>Dapper for EF</title>
+    <authors>Ghulam Mustafa</authors>
+    <owners>Ghulam Mustafa</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Built on Dapper library for Entity Framework with some helper classes to utilize at its max.</description>
+    <releaseNotes>This is the first release</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>Dapper Utility EntityFramework Entity Framework ASP SQL EF</tags>
+  </metadata>
+</package>
