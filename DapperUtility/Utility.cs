@@ -45,15 +45,11 @@ namespace DapperUtility
         /// This method uses the Dapper Library to get multiple result sets from SQL Server and return it in a single Base Class Object so that one method is all what is required.
         /// </summary>
         /// <param name="StoredProcedure">The Stored Procedure Name</param>
-        /// <param name="Lang">Langauge: 'ar' for Arabic and 'en' for English</param>
         /// <param name="Mode">The types of responses from a dapper SqlMapper.QueryMultiple query</param>
-        /// <param name="DeviceId">Device Id for push notification purposes only</param>
         /// <param name="paramList">The paramwithvalues class array</param>
         /// <returns></returns>
         public static IEnumerable<MainResponseObject> DapperRepo(string StoredProcedure,
-                                                                                    string Lang,
                                                                                     ResponseMode Mode,
-                                                                                    string DeviceId = "",
                                                                                     params paramWithValues[] paramList)
         {
             // This is SQL Connection only, do not mess with it
@@ -72,8 +68,6 @@ namespace DapperUtility
             {
                 args.Add(item.param, item.value, item.dbType, item.paramDirection);
             }
-            args.Add("@Lang", Lang);
-            args.Add("@DeviceId", DeviceId);
             args.Add("@result", result, DbType.Int32, ParameterDirection.Output);
             args.Add("@message", message, DbType.String, ParameterDirection.Output);
 
@@ -102,15 +96,11 @@ namespace DapperUtility
         /// This method uses the Dapper Library to get multiple result sets from SQL Server and return it in a single Base Class Object so that one method is all what is required. Stored Procedure as Enum
         /// </summary>
         /// <param name="StoredProcedure">The Stored Procedure Name as Enum</param>
-        /// <param name="Lang">Langauge: 'ar' for Arabic and 'en' for English</param>
         /// <param name="Mode">The types of responses from a dapper SqlMapper.QueryMultiple query</param>
-        /// <param name="DeviceId">Device Id for push notification purposes only</param>
         /// <param name="paramList">The paramwithvalues class array</param>
         /// <returns></returns>
         public static IEnumerable<MainResponseObject> DapperRepo(SP StoredProcedure,
-                                                                                    string Lang,
                                                                                     ResponseMode Mode,
-                                                                                    string DeviceId = "",
                                                                                     params paramWithValues[] paramList)
         {
             // This is SQL Connection only, do not mess with it
@@ -129,8 +119,6 @@ namespace DapperUtility
             {
                 args.Add(item.param, item.value, item.dbType, item.paramDirection);
             }
-            args.Add("@Lang", Lang);
-            args.Add("@DeviceId", DeviceId);
             args.Add("@result", result, DbType.Int32, ParameterDirection.Output);
             args.Add("@message", message, DbType.String, ParameterDirection.Output);
 
